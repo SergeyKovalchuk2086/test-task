@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;	
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap");
+
+body {
+	font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+li {
+	list-style: none;
+}
+
+.header {
+	.container {
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 0;
+
+		.header__top {
+			background-color: #f8f3ff;
+			height: 96px;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.logo {
+				margin-left: 64px;
+			}
+
+			.menu {
+				.menu__list {
+					display: flex;
+					color: #8e43ed;
+					margin-right: 176px;
+
+					.menu__item {
+						margin-right: 32px;
+						color: #8e43ed;
+						line-height: 20px;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+
+		.header__content {
+			background-image: url(../img/jd_bg.jpg);
+			background-position: top center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			.jd {
+				padding: 100px 176px 100px 64px;
+				display: flex;
+				position: relative;
+
+				.jd__info {
+					margin: 44px 0 44px 32px;
+
+					.title {
+						margin: 0;
+						font-size: 56px;
+						line-height: 72px;
+					}
+
+					p {
+						display: inline-block;
+						line-height: 21px;
+						margin-right: 32px;
+
+						span {
+							color: #aa7ecd;
+							font-weight: 700;
+							margin-right: 8px;
+						}
+					}
+
+					.subtitle {
+						font-size: 27px;
+						line-height: 36px;
+						font-weight: 800;
+						margin-top: 64px;
+					}
+
+					.text {
+						font-size: 18px;
+						line-height: 32px;
+						margin: 0;
+					}
+
+					.text + .text {
+						margin-top: 37px;
+					}
+				}
+			}
+
+			.jd::before {
+				content: "";
+				background-image: url(../img/cubes.png);
+				position: absolute;
+				width: 170px;
+				height: 250px;
+				left: 0px;
+				top: 505.23px;
+			}
+		}
+	}
+}

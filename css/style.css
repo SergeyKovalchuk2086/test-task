@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+.header .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+.header .container .header__top {
+  background-color: #f8f3ff;
+  height: 96px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .container .header__top .logo {
+  margin-left: 64px;
+}
+.header .container .header__top .menu .menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #8e43ed;
+  margin-right: 176px;
+}
+.header .container .header__top .menu .menu__list .menu__item {
+  margin-right: 32px;
+  color: #8e43ed;
+  line-height: 20px;
+  font-weight: 500;
+}
+.header .container .header__content {
+  background-image: url(../img/jd_bg.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header .container .header__content .jd {
+  padding: 100px 176px 100px 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+.header .container .header__content .jd .jd__info {
+  margin: 44px 0 44px 32px;
+}
+.header .container .header__content .jd .jd__info .title {
+  margin: 0;
+  font-size: 56px;
+  line-height: 72px;
+}
+.header .container .header__content .jd .jd__info p {
+  display: inline-block;
+  line-height: 21px;
+  margin-right: 32px;
+}
+.header .container .header__content .jd .jd__info p span {
+  color: #aa7ecd;
+  font-weight: 700;
+  margin-right: 8px;
+}
+.header .container .header__content .jd .jd__info .subtitle {
+  font-size: 27px;
+  line-height: 36px;
+  font-weight: 800;
+  margin-top: 64px;
+}
+.header .container .header__content .jd .jd__info .text {
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0;
+}
+.header .container .header__content .jd .jd__info .text + .text {
+  margin-top: 37px;
+}
+.header .container .header__content .jd::before {
+  content: "";
+  background-image: url(../img/cubes.png);
+  position: absolute;
+  width: 170px;
+  height: 250px;
+  left: 0px;
+  top: 505.23px;
+}
