@@ -108,3 +108,184 @@ li {
   left: 0px;
   top: 505.23px;
 }
+
+.main .form .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5px;
+  background-color: #f8f3ff;
+  background-image: url(../img/form_bg.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 800px;
+}
+.main .form .container .form__caption h2 {
+  font-size: 40px;
+  line-height: 72px;
+  margin-top: 56px;
+  margin-left: 64px;
+}
+.main .form .container .form__inner {
+  margin-left: 64px;
+}
+.main .form .container .form__inner ul {
+  margin-top: 40px;
+}
+.main .form .container .form__inner ul li {
+  display: inline-block;
+  width: 304px;
+  height: 83px;
+}
+.main .form .container .form__inner ul li label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #303030;
+}
+.main .form .container .form__inner ul li .new__select select {
+  margin-top: 8px;
+  padding: 5px;
+  padding-left: 16px;
+  border: 1px solid #d9bbff;
+  font-size: 16px;
+  line-height: 24px;
+  -webkit-appearance: none;
+  width: 304px;
+  height: 56px;
+  background: #fff;
+  border-radius: 12px;
+  outline: none;
+  color: #9f9f9f;
+}
+.main .form .container .form__inner ul li input {
+  margin-top: 8px;
+  padding-left: 12px;
+  width: 100%;
+  line-height: 24;
+  height: 56px;
+  border: 1px solid #d9bbff;
+  border-radius: 12px;
+}
+.main .form .container .form__inner ul li input[type=date] {
+  color: #9f9f9f;
+}
+.main .form .container .form__inner ul li input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+.main .form .container .form__inner ul li input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #9f9f9f;
+}
+.main .form .container .form__inner ul li input::-moz-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #9f9f9f;
+}
+.main .form .container .form__inner ul li input:-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #9f9f9f;
+}
+.main .form .container .form__inner ul li input::-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #9f9f9f;
+}
+.main .form .container .form__inner ul li input::placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: #9f9f9f;
+}
+.main .form .container .form__inner ul li + li {
+  margin-left: 32px;
+}
+.main .form .container .form__inner .addDocument {
+  width: 976px;
+  height: 104px;
+  border: 1px dashed #d9bbff;
+  border-radius: 12px;
+  background: #fff;
+  margin-top: 56px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.main .form .container .form__inner .addDocument label {
+  color: #9993bd;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  margin-right: 16px;
+  cursor: pointer;
+}
+.main .form .container .form__inner .addDocument input[type=file] {
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+}
+.main .form .container .form__inner .addDocument .add {
+  border: 1px solid #8e43ed;
+  border-radius: 12px;
+  width: 212px;
+  height: 56px;
+  text-align: center;
+  padding-top: 15px;
+  cursor: pointer;
+}
+.main .form .container .form__inner .documentInfo {
+  width: 256px;
+  height: 56px;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #d9bbff;
+  border-radius: 12px;
+  margin-top: 8px;
+  background: #fff;
+}
+.main .form .container .form__inner .documentInfo img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 12px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.main .form .container .form__inner .documentInfo .pic {
+  width: 40px;
+  height: 40px;
+  margin-left: 12px;
+  margin-right: 8px;
+}
+.main .form .container .form__inner .documentInfo .fileName {
+  font-size: 14px;
+  line-height: 18px;
+  color: #303030;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+.main .form .container .form__inner .documentInfo .fileSize {
+  display: block;
+  font-size: 12px;
+  color: #afafaf;
+}
+.main .form .container .form__inner .documentInfo .basket {
+  width: 12px;
+  height: 13px;
+  margin-left: auto;
+  margin-right: 8px;
+}

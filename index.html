@@ -56,15 +56,58 @@
 	</header>
 
 	<main class="main">
-		<section class="about">
-			<div class="container">
-
-			</div>
-		</section>
-
 		<section class="form">
 			<div class="container">
+				<div class="form__caption">
+					<h2>
+						Tell us about yourself
+					</h2>
+				</div>
+				<div class="form__inner">
+					<form action="" method="">
 
+						<ul class="firstList">
+							<li>
+								<label for="name">Your name</label>
+								<input type="text" id="name" placeholder="Tell us your name">
+							</li>
+							<li>
+								<label for="gender">Your gender</label>
+								<div class="new__select">
+									<select name="" id="">
+										<option value="" selected class="dis">Choose your gender</option>
+										<option value="Male">Male</option>
+										<option value="Female">Female</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+
+						<ul class="secondList">
+							<li>
+								<label for="country">Your country</label>
+								<input type="text" id="country" placeholder="Where are you from?">
+							</li>
+							<li>
+								<label for="city">Your city</label>
+								<input type="text" id="city" placeholder="Your native city">
+							</li>
+							<li>
+								<label for="date">Your date of birth</label>
+								<input type="date" id="date">
+							</li>
+						</ul>
+						<div class="addDocument">
+							<label for="file">Proof your identity with some documents</label>
+							<input type="file" id="file" accept=".jpg, .png">
+							<label for="file" class="add">Add document</label>
+						</div>
+						<div class="documentInfo" id="documentInfo">
+							
+						</div>
+						<button class="send">Send info</button>
+					</form>
+				</div>
 			</div>
 		</section>
 
