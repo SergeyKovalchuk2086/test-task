@@ -129,7 +129,7 @@ li {
 			background-repeat: no-repeat;
 			background-size: contain;
 
-			height: 800px;
+			height: 750px;
 
 			.form__caption h2 {
 				font-size: 40px;
@@ -140,14 +140,18 @@ li {
 
 			.form__inner {
 				margin-left: 64px;
+				position: relative;
+
 				ul {
 					margin-top: 40px;
+
 					li {
 						display: inline-block;
 						width: 304px;
 						height: 83px;
 
 						label {
+							margin-left: 5px;
 							font-weight: 600;
 							font-size: 14px;
 							color: #303030;
@@ -184,11 +188,27 @@ li {
 							color: #9f9f9f;
 						}
 
+						//скрываем формат даты и иконку календаря
 						input[type="date"]::-webkit-calendar-picker-indicator {
 							opacity: 0;
 						}
 
-						// input[type=date]::-webkit-datetime-edit-text {
+						// input[type="date"]::-webkit-datetime-edit-text {
+						// 	-webkit-appearance: none;
+						// 	display: none;
+						// }
+
+						// input[type="date"]::-webkit-datetime-edit-month-field {
+						// 	-webkit-appearance: none;
+						// 	display: none;
+						// }
+
+						// input[type="date"]::-webkit-datetime-edit-day-field {
+						// 	-webkit-appearance: none;
+						// 	display: none;
+						// }
+
+						// input[type="date"]::-webkit-datetime-edit-year-field {
 						// 	-webkit-appearance: none;
 						// 	display: none;
 						// }
@@ -202,6 +222,10 @@ li {
 					li + li {
 						margin-left: 32px;
 					}
+				}
+
+				.secondList {
+					display: none;
 				}
 
 				.addDocument {
@@ -288,11 +312,29 @@ li {
 					}
 
 					.basket {
-						width: 12px;
-						height: 13px;
+						width: 13px;
+						height: 14px;
 						margin-left: auto;
 						margin-right: 8px;
+						-o-object-fit: initial;
+						object-fit: scale-down;
 					}
+				}
+
+				input[type="submit"] {
+					background: #ded9e4;
+					width: 212px;
+					height: 56px;
+					border-radius: 12px;
+					position: absolute;
+					top: 480px;
+					color: #fff;
+					line-height: 24px;
+					font-weight: 500;
+				}
+
+				.active {
+					background: #8e43ed;
 				}
 			}
 		}
