@@ -1,16 +1,17 @@
 const fileUploader = document.getElementById('file');
-const reader = new FileReader();
 const imageGrid = document.getElementById('documentInfo');
+const addDocument = document.getElementById('addDocument');
+const sendBtn = document.getElementById('sendBtn');
 
 const name = document.getElementById('name');
 const select = document.getElementById('select');
 const country = document.getElementById('country');
 const city = document.getElementById('city');
 const date = document.getElementById('date');
-console.log(date);
+
 
 const secondList = document.getElementById('secondList');
-
+const submitInfo = document.getElementById('submitInfo');
 
 let proverka = {
 	inputName: false,
@@ -60,6 +61,10 @@ city.addEventListener('keyup', function (event) {
 		proverka.inputCity = true;
 		city.style.borderColor = "#8E43ED";
 	}
+
+	if (proverka.inputCity == true && proverka.inputCountry == true) {
+		addDocument.style.display = 'flex';
+	}
 })
 
 //inputDate
@@ -69,59 +74,130 @@ date.addEventListener('click', function (event) {
 	// 	date.style.borderColor = "#8E43ED";
 	// }
 
-	console.log(event.taget);
+	// console.log(event.taget);
 })
 
-//добавляем блок с информацией о файле
-// fileUploader.addEventListener('change', (event) => {
-// 	const files = event.target.files;
-// 	console.log('files', files);
+// 
+// Добавляем блок с информацией о файле
+fileUploader.addEventListener('change', (event) => {
+	let files = event.target.files;
 
-// 	for (const file of files) {
-// 		let name = file.name;
-// 		let type = file.type;
-// 		const size = file.size;
+	if (files == null) {
+		console.log(null);
+	}
 
-// 		let format = type.split('/').pop().toUpperCase();
-// 		console.log(format);
+	console.log('files', files);
 
-// 		name = name.slice(0, name.indexOf("."));
-// 		const block = document.getElementById('documentInfo');
+	for (const file of files) {
+		let name = file.name;
+		let type = file.type;
+		const size = file.size;
 
-// 		let blockInfo = `
-// 			<div class="info" id="info">
-// 				<span class="fileName">${name}</span>
-// 				<span class="fileSize">${format + ' ' + (size / 1024 / 1014).toFixed(3) + ' mb'}</span>
-// 			</div>
-// 			<img src="./img/basket.png" alt="basket" class="basket" id="basket">
-// 			`
-// 		block.innerHTML = blockInfo;
+		let format = type.split('/').pop().toUpperCase();
+
+		name = name.slice(0, name.indexOf("."));
+		const block = document.getElementById('documentInfo');
+
+		let blockInfo = `
+			<div class="info" id="info">
+				<span class="fileName">${name}</span>
+				<span class="fileSize">${format + ' ' + (size / 1024 / 1014).toFixed(3) + ' mb'}</span>
+			</div>
+			<img src="./img/basket.png" alt="basket" class="basket" id="basket" onclick ="deleteInfo()">
+			`
+		block.innerHTML = blockInfo;
+	}
+
+	const reader = new FileReader();
+	const file = files[0];
+	console.log(file);
+	reader.readAsDataURL(file);
+
+	reader.addEventListener('load', (event) => {
+		const img = document.createElement('img');
+		imageGrid.prepend(img);
+		img.src = event.target.result;
+		img.alt = file.name;
+	});
+});
+
+// Если файл загружен меняем стиль для кнопки
+fileUploader.addEventListener('click', function () {
+	let div = document.getElementById('documentInfo');
+	let sendBtn = document.getElementById('sendBtn');
+
+	if (div.style.display == 'none') {
+		div.style.display = 'flex';
+	} else {
+		div.style.display = 'flex';
+	}
+
+	if (div.style.display = 'flex') {
+		sendBtn.style.background = "#8e43ed";
+	}
+});
+
+function deleteInfo() {
+	console.log('delete');
+	file = null;
+
+	if (file == null) {
+		imageGrid.style.display = 'none';
+		sendBtn.style.background = "#DED9E4";
+	}
+	console.log(file);
+}
+
+// sendBtn.addEventListener('click', function () {
+
+// 	if (submitInfo.style.opacity == 0) {
+// 		submitInfo.style.opacity == 1;
 // 	}
+// 	// sendBtn.style.background = "#DED9E4";
 
-// 	const file = files[0];
-// 	reader.readAsDataURL(file);
+// })
 
-// 	reader.addEventListener('load', (event) => {
-// 		const img = document.createElement('img');
-// 		imageGrid.prepend(img);
-// 		img.src = event.target.result;
-// 		img.alt = file.name;
-// 	});
-// });
+function opacity() {
+	if (submitInfo.style.opacity == 0) {
+		submitInfo.style.opacity == 1;
+	}
+}
 
-//если файл загружен меняем стиль для кнопки
-// fileUploader.addEventListener('click', function () {
-// 	let div = document.getElementById('documentInfo');
-// 	let sendBtn = document.getElementById('sendBtn');
 
-// 	if (div.style.display == 'none') {
-// 		div.style.display = 'flex';
-// 	} else {
-// 		div.style.display = 'flex';
-// 	}
+//SLIDER
 
-// 	if (div.style.display = 'flex') {
-// 		sendBtn.style.background = "#8e43ed";
-// 	}
-// });
+let images = document.querySelectorAll('.slider img');
+let slider = document.querySelector('.slider');
+let leftBtn = document.querySelector('.btnLeft');
+let rightBtn = document.querySelector('.btnRight');
+let points = document.querySelectorAll('.point');
 
+let current = 0;
+
+function slide() {
+	for (let i = 0; i < images.length; i++) {
+		images[i].classList.add('hidden');
+		points[i].style.backgroundColor = 'inherit';
+	}
+	images[current].classList.remove('hidden');
+	points[current].style.backgroundColor = '#fff';
+}
+slide();
+
+leftBtn.addEventListener('click', function () {
+	if (current - 1 == -1) {
+		current = images.length - 1;
+	} else {
+		current--;
+	}
+	slide();
+})
+
+rightBtn.addEventListener('click', function () {
+	if (current + 1 == images.length) {
+		current = 0;
+	} else {
+		current++;
+	}
+	slide();
+})

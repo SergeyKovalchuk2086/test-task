@@ -64,8 +64,8 @@
 					</h2>
 				</div>
 				<div class="form__inner">
-					<form action="" method="">
-
+					<form action="">
+						<!-- Inputs : name, gender -->
 						<ul class="firstList" id="firstList">
 							<li>
 								<label for="name">Your name</label>
@@ -82,7 +82,7 @@
 								</div>
 							</li>
 						</ul>
- 
+						<!-- Inputs : country, city, day of birth -->
 						<ul class="secondList" id="secondList">
 							<li>
 								<label for="country">Your country</label>
@@ -94,23 +94,54 @@
 							</li>
 							<li>
 								<label for="date">Your date of birth</label>
-								<input type="date" id="date" >
-								
-							</li>
-						</ul> 
+								<input type="date" id="date">
 
-						<!-- <div class="addDocument">
+							</li>
+						</ul>
+						<!-- Поле загрузки файла -->
+						<div class="addDocument" id="addDocument">
 							<label for="file">Proof your identity with some documents</label>
 							<input type="file" id="file" accept=".jpg, .png">
 							<label for="file" class="add">Add document</label>
 						</div>
-						<div class="documentInfo" id="documentInfo">
-
-						</div>  -->
-						<input type="submit" value="Send info" class="sendBtn " id="sendBtn">
-
+						<!-- Информация о документе(изображение, формат, размер, название файла) -->
+						<div class="documentInfo" id="documentInfo"></div>
+						<!-- Кнопка отправить -->
+						<input type="submit" value="Send info" class="sendBtn " id="sendBtn" onclick="opacity()">
+						<!-- Информация - форма отправлена -->
+						<div class="submitInfo" id="submitInfo">
+							<img src=".//img/check.png" alt="check" class="checkLabel">
+							<p>Completed</p>
+						</div>
 					</form>
-					<script src="script/script.js"></script>
+				</div>
+			</div>
+		</section>
+
+		<section class="slider">
+			<div class="container">
+				<div class="slider">
+					<img src="./img/1.png" alt="image">
+					<img src="./img/2.png" alt="image">
+					<img src="./img/3.png" alt="image">
+				</div>
+				<div class="slider__text">
+					<h2>Slide this photo</h2>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+					</p>
+				</div>
+				<div class="btnLeft"></div>
+				<div class="btnRight"></div>
+				<div class="points">
+					<button class="point"></button>
+					<button class="point"></button>
+					<button class="point"></button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="script/script.js"></script>
 </body>
 
 </html>

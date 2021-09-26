@@ -236,7 +236,7 @@ li {
 					background: #fff;
 
 					margin-top: 56px;
-					display: flex;
+					display: none;
 					justify-content: center;
 					align-items: center;
 
@@ -335,6 +335,109 @@ li {
 
 				.active {
 					background: #8e43ed;
+				}
+
+				.submitInfo {
+					display: flex;
+					width: 131px;
+					height: 32px;
+					justify-content: space-between;
+					align-items: center;
+					position: absolute;
+					left: 238px;
+					top: 492px;
+					opacity: 0;
+				}
+			}
+		}
+	}
+
+	.slider {
+		.container {
+			width: 1440px;
+			padding: 5px;
+			margin: 0 auto;
+			position: relative;
+
+			.slider {
+				width: 1312px;
+				height: 535px;
+				overflow: hidden;
+				position: relative;
+				margin: 56px auto;
+
+				img {
+					position: absolute;
+					opacity: 1;
+					transition: all ease 1s;
+				}
+				.hidden {
+					opacity: 0;
+				}
+			}
+
+			.slider__text {
+				width: 580px;
+				height: 152px;
+				text-align: center;
+				position: absolute;
+				top: 253px;
+				left: 430px;
+				color: #fff;
+
+				h2 {
+					font-size: 56px;
+					line-height: 72px;
+					margin-bottom: 16px;
+				}
+
+				p {
+					font-weight: 500;
+					font-size: 18px;
+					line-height: 32px;
+				}
+			}
+
+			.btnLeft {
+				background-image: url(../img/left.png);
+				background-size: contain;
+				height: 30px;
+				width: 17px;
+				position: absolute;
+				top: 309px;
+				left: 96px;
+			}
+
+			.btnRight {
+				background-image: url(../img/right.png);
+				background-size: contain;
+				height: 30px;
+				width: 17px;
+				position: absolute;
+				top: 309px;
+				left: 1329px;
+			}
+
+			.points {
+				display: flex;
+				justify-content: space-between;
+				width: 60px;
+				position: absolute;
+				top: 547px;
+				left: 690px;
+
+				.point {
+					border: 2px solid #fff;
+					width: 12px;
+					height: 12px;
+					padding: 0;
+					border-radius: 50%;
+					background-color: inherit;
+					cursor: pointer;
+				}
+
+				.active {
+					background-color: #fff;
 				}
 			}
 		}
