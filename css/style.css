@@ -22,6 +22,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .header .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -50,7 +54,7 @@ li {
   color: #8e43ed;
   margin-right: 176px;
 }
-.header .container .header__top .menu .menu__list .menu__item {
+.header .container .header__top .menu .menu__list .menu__item a {
   margin-right: 32px;
   color: #8e43ed;
   line-height: 20px;
@@ -128,6 +132,8 @@ li {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 750px;
+  position: relative;
 }
 .main .form .container .form__caption h2 {
   font-size: 40px;
@@ -138,7 +144,6 @@ li {
 .main .form .container .form__inner {
   margin-left: 64px;
   position: relative;
-  height: 750px;
 }
 .main .form .container .form__inner ul {
   margin-top: 40px;
@@ -465,6 +470,10 @@ li {
   }
 }
 @media (max-width: 1122px) {
+  .main .form .container {
+    height: 848px;
+  }
+
   .main .form .container .form__inner .secondList li:last-child {
     display: block;
     margin-left: 0;
@@ -686,6 +695,10 @@ li {
     margin: 0 auto;
     height: 30px;
   }
+
+  .main .slider .container .points {
+    left: 45%;
+  }
 }
 @media (max-width: 480px) {
   .header .container .header__content .jd .jd__image img {
@@ -744,17 +757,31 @@ li {
   }
 
   .main .slider .container .slider__text {
-    width: 49%;
+    width: 47%;
     left: 29%;
+  }
+
+  .main .slider .container .points {
+    left: 44%;
   }
 }
 @media (max-width: 418px) {
+  .main .slider .container .points {
+    left: 43%;
+  }
+
   .main .slider .container .slider__text {
-    width: 53%;
-    left: 26%;
+    width: 63%;
+    left: 19%;
+    top: 28%;
   }
 }
 @media (max-width: 375px) {
+  .main .form .container .form__caption h2 {
+    font-size: 32px;
+    line-height: 41px;
+  }
+
   .header .container .header__content .jd::before {
     content: "";
     display: block;
@@ -766,5 +793,36 @@ li {
     left: 269px;
     top: 303px;
     z-index: 1;
+  }
+
+  .main .slider .container .slider .btnLeft {
+    top: 84%;
+    left: 8.5%;
+  }
+
+  .main .slider .container .slider .btnRight {
+    top: 84%;
+    right: 8.5%;
+  }
+
+  .main .slider .container .points {
+    left: 43%;
+  }
+
+  .main .form .container::before {
+    content: "";
+    width: 127px;
+    height: 141px;
+    background-image: url(../img/cubesInForm.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 248px;
+    top: 12px;
+  }
+
+  .main .slider .container .slider__text {
+    width: 68%;
+    left: 17%;
   }
 }

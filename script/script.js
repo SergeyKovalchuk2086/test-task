@@ -1,17 +1,25 @@
-const fileUploader = document.getElementById('file');
-const imageGrid = document.getElementById('documentInfo');
-const addDocument = document.getElementById('addDocument');
-const sendBtn = document.getElementById('sendBtn');
-
+//форма (инпуты)
 const name = document.getElementById('name');
 const select = document.getElementById('select');
 const country = document.getElementById('country');
 const city = document.getElementById('city');
 const date = document.getElementById('date');
 
-
+//форма
 const secondList = document.getElementById('secondList');
 const submitInfo = document.getElementById('submitInfo');
+const sendBtn = document.getElementById('sendBtn');
+const addDocument = document.getElementById('addDocument');
+const fileUploader = document.getElementById('file');
+const imageGrid = document.getElementById('documentInfo');
+
+//слайдер
+let images = document.querySelectorAll('.slider img');
+let slider = document.querySelector('.slider');
+let leftBtn = document.querySelector('.btnLeft');
+let rightBtn = document.querySelector('.btnRight');
+let points = document.querySelectorAll('.point');
+let img = document.querySelectorAll('#img');
 
 let proverka = {
 	inputName: false,
@@ -165,13 +173,6 @@ function opacity() {
 
 
 //SLIDER
-
-let images = document.querySelectorAll('.slider img');
-let slider = document.querySelector('.slider');
-let leftBtn = document.querySelector('.btnLeft');
-let rightBtn = document.querySelector('.btnRight');
-let points = document.querySelectorAll('.point');
-
 let current = 0;
 
 function slide() {
@@ -200,4 +201,22 @@ rightBtn.addEventListener('click', function () {
 		current++;
 	}
 	slide();
-})
+});
+
+
+//поменял картинку для мобильной версии в слайдере
+
+let checkImgSize = setInterval(function () {
+	if (img[0].width == "349") {
+		for(let i = 0; i < img.length; i++) {
+			img[i].src = "http://localhost:8848/img/slideImg.png"
+		}
+		console.log('349');
+	} else {
+		for(let i = 0; i < img.length; i++) {
+			img[i].src = `http://localhost:8848/img/${i+1}.png`
+		}
+		// img.src = "http://localhost:8848/img/1.png"0
+		console.log('---');
+	}
+}, 100);
