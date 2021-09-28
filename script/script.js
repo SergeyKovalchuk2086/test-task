@@ -34,6 +34,10 @@ name.addEventListener('keyup', function (event) {
 		proverka.inputName = true;
 		name.style.borderColor = "#8E43ED";
 	}
+
+	if (submitInfo.style.opacity == 0) {
+		submitInfo.style.opacity = 1;
+	}
 })
 
 //inputSelect
@@ -131,20 +135,21 @@ fileUploader.addEventListener('change', (event) => {
 
 // Если файл загружен меняем стиль для кнопки
 fileUploader.addEventListener('click', function () {
-	let div = document.getElementById('documentInfo');
+	let docInfo = document.getElementById('documentInfo');
 	let sendBtn = document.getElementById('sendBtn');
 
-	if (div.style.display == 'none') {
-		div.style.display = 'flex';
+	if (docInfo.style.display == 'none') {
+		docInfo.style.display = 'flex';
 	} else {
-		div.style.display = 'flex';
+		docInfo.style.display = 'flex';
 	}
 
-	if (div.style.display = 'flex') {
+	if (docInfo.style.display = 'flex') {
 		sendBtn.style.background = "#8e43ed";
 	}
 });
 
+//удалить файл
 function deleteInfo() {
 	console.log('delete');
 	file = null;
@@ -159,17 +164,16 @@ function deleteInfo() {
 // sendBtn.addEventListener('click', function () {
 
 // 	if (submitInfo.style.opacity == 0) {
-// 		submitInfo.style.opacity == 1;
+// 		submitInfo.style.opacity = 1;
 // 	}
-// 	// sendBtn.style.background = "#DED9E4";
 
 // })
 
-function opacity() {
-	if (submitInfo.style.opacity == 0) {
-		submitInfo.style.opacity == 1;
-	}
-}
+// function opacity() {
+// 	if (submitInfo.style.opacity == 0) {
+// 		submitInfo.style.opacity == 1;
+// 	}
+// }
 
 
 //SLIDER
@@ -205,18 +209,62 @@ rightBtn.addEventListener('click', function () {
 
 
 //поменял картинку для мобильной версии в слайдере
-
+//функция каждую секунду проверяет размер слайдера
 let checkImgSize = setInterval(function () {
 	if (img[0].width == "349") {
-		for(let i = 0; i < img.length; i++) {
-			img[i].src = "http://localhost:8848/img/slideImg.png"
+		for (let i = 0; i < img.length; i++) {
+			img[i].src = img[i].baseURI + 'img/slideImg.png';
 		}
-		console.log('349');
 	} else {
-		for(let i = 0; i < img.length; i++) {
-			img[i].src = `http://localhost:8848/img/${i+1}.png`
+		for (let i = 0; i < img.length; i++) {
+			img[i].src = `http://localhost:8848/img/${i + 1}.png`
 		}
-		// img.src = "http://localhost:8848/img/1.png"0
-		console.log('---');
 	}
-}, 100);
+}, 1000);
+
+//валидация формы и отправка
+/*
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('form');
+	form.addEventListener('submit', formSend);
+
+	async function formSend(event) {
+		event.preventDefault();
+		let error = formValidate(form);
+	}
+
+	function formValidate(form) {
+		let error = 0;
+
+		let formReq = document.querySelectorAll('._req');
+
+		for (let index = 0; index < formReq.length; index++) {
+			const input = formReq[index];
+
+			formRemoveError(input);
+
+			if (input.classList.contains('_name')) {
+				if(input.value == '') {
+					formAddError(input);
+					error++;
+				} else if (proverka.inputSelect === "Male" || proverka.inputSelect === "Female") {
+					formAddError(input);
+					error++;
+				}
+			}
+		};
+	}
+
+	function formAddError(input) {
+		input.parentElement.classList.add('_error');
+		input.classList.add('_error');
+	}
+
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('_error');
+		input.classList.remove('_error');
+	}
+
+
+
+});*/

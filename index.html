@@ -64,17 +64,17 @@
 					</h2>
 				</div>
 				<div class="form__inner">
-					<form action="">
+					<form action="" id="form">
 						<!-- Inputs : name, gender -->
 						<ul class="firstList" id="firstList">
 							<li>
 								<label for="name">Your name</label>
-								<input type="text" id="name" minlength="1" placeholder="Tell us your name" class="nameInput">
+								<input type="text" id="name" minlength="1" placeholder="Tell us your name" class="nameInput _req _name">
 							</li>
 							<li>
 								<label for="gender">Your gender</label>
 								<div class="new__select">
-									<select name="" id="select">
+									<select name="" id="select" _req>
 										<option value="" selected class="dis">Choose your gender</option>
 										<option value="Male">Male</option>
 										<option value="Female">Female</option>
@@ -86,15 +86,15 @@
 						<ul class="secondList" id="secondList">
 							<li>
 								<label for="country">Your country</label>
-								<input type="text" id="country" placeholder="Where are you from?">
+								<input type="text" id="country" placeholder="Where are you from?" class="_req">
 							</li>
 							<li>
 								<label for="city">Your city</label>
-								<input type="text" id="city" placeholder="Your native city">
+								<input type="text" id="city" placeholder="Your native city" class="_req">
 							</li>
 							<li>
 								<label for="date">Your date of birth</label>
-								<input type="date" id="date">
+								<input type="date" id="date" class="_req">
 
 							</li>
 						</ul>
@@ -132,8 +132,6 @@
 					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
 					</p>
 				</div>
-				<!-- <div class="btnLeft"></div> -->
-				<!-- <div class="btnRight"></div> -->
 				<div class="points">
 					<button class="point"></button>
 					<button class="point"></button>

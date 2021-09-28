@@ -12,6 +12,12 @@
   transition: ease all 1s;
 }
 
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/gilroy-medium.woff2") format("woff2"), url("../fonts/gilroy-medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+}
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
@@ -145,6 +151,9 @@ a {
   margin-left: 64px;
   position: relative;
 }
+.main .form .container .form__inner .nameInput ._error {
+  border: 2px solid red;
+}
 .main .form .container .form__inner ul {
   margin-top: 40px;
 }
@@ -260,6 +269,9 @@ a {
   padding-top: 15px;
   cursor: pointer;
 }
+.main .form .container .form__inner .addDocument .proff {
+  font-family: "Gilroy";
+}
 .main .form .container .form__inner .documentInfo {
   width: 256px;
   height: 56px;
@@ -324,9 +336,7 @@ a {
   background: #8e43ed;
 }
 .main .form .container .form__inner .submitInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   width: 131px;
   height: 32px;
   -webkit-box-pack: justify;
@@ -487,6 +497,10 @@ a {
   .main .form .container .form__inner input[type=submit] {
     top: 579px;
   }
+
+  .main .form .container .form__inner .submitInfo {
+    top: 600px;
+  }
 }
 @media (max-width: 1100px) {
   .main .form .container .form__inner .addDocument {
@@ -602,6 +616,10 @@ a {
 
   .main .slider .container .slider__text {
     top: 30%;
+  }
+
+  .main .form .container .form__inner .submitInfo {
+    top: 803px;
   }
 }
 @media (max-width: 675px) {
